@@ -1,0 +1,9 @@
+<h1>List of Drivers</h1>
+
+<div class="cardList" >
+ 
+  <app-driver-item  *ngFor="let driver of drivers" [driver]="driver"></app-driver-item>
+
+
+</div>
+<button mat-flat-button color="primary" (click)="onNewDriver()">New Driver</button>

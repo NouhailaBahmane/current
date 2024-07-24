@@ -1,0 +1,27 @@
+<form #form="ngForm" (ngSubmit)="onSave()" class="example-form">
+
+    <mat-form-field fxFlex floatLabel="auto"  class="example-full-width">
+      <mat-label>Registration Number</mat-label>
+      <input matInput placeholder="Registration Number" name="registrationNumber" ngModel required>
+      <mat-error *ngIf="form.controls['registrationNumber']?.errors && form.controls['registrationNumber']?.errors['required']">registration Number is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field fxFlex floatLabel="auto"  class="example-full-width">
+      <mat-label>Brand</mat-label>
+      <input matInput placeholder="Brand" name="brand" ngModel required>
+      <mat-error *ngIf="form.controls['brand']?.errors && form.controls['brand']?.errors['required']">brand is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field fxFlex floatLabel="auto"  class="example-full-width">
+      <mat-label>Current Km</mat-label>
+      <input matInput placeholder="Current Km" name="currentKm" ngModel required>
+      <mat-error *ngIf="form.controls['currentKm']?.errors && form.controls['currentKm']?.errors['required']">current Km is required</mat-error>
+   
+    </mat-form-field>
+    <div class="button-row">
+      <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+    <div class="button-row">
+      <button mat-flat-button color="accent" type="button" (click)="form.reset()">Clear</button>
+    </div>
+  </form>

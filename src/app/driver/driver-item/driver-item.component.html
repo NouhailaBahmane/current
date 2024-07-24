@@ -1,0 +1,13 @@
+<mat-card  appShadow>
+    <mat-card-header>
+        <div mat-card-avatar [style.backgroundImage]="getImgContent(driver?.photo)" style="background-size: cover;" ></div>
+      <mat-card-title>{{driver!.firstName | firstNameFormat}} {{driver.lastName | uppercase}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{driver.photo}}" class="card-image" alt="{{driver.firstName}}" >
+    <mat-card-content class="card-content">
+      Driver of :  {{driver.vehicle?.brand}} / {{driver.vehicle?.registrationNumber}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="onShow()">Show</button>
+    </mat-card-actions>
+  </mat-card>

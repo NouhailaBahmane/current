@@ -1,0 +1,28 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>First Name</mat-label>
+      <input [value]="driver.firstName" matInput placeholder="First Name" [(ngModel)]="driver.firstName" name="firstName">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Last Name</mat-label>
+      <input [value]="driver.lastName" matInput placeholder="Last Name" [(ngModel)]="driver.lastName" name="lastName">
+    </mat-form-field>
+  
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Vehicle</mat-label>
+      <mat-select [(ngModel)]="driver.vehicle" name="vehicle">
+        <mat-option *ngFor="let vehicle of vehicles" [value]="vehicle">
+          {{vehicle.brand}}: {{vehicle.registrationNumber}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <img [src]="driver.photo" placeholder="Photo" type="file">
+  
+    <div class="button-row">
+      <button mat-flat-button color="primary" (click)="save()">Save</button>
+    </div>
+  
+  </form>
